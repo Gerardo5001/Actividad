@@ -47,4 +47,12 @@ public class Usuario {
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+    public void mostrar(){
+        System.out.println(
+            "Nombre: "+ nombre +"\n"+
+            "Apellido paterno: "+apellidoPaterno+"\n"+
+            "Apellido materno: "+apellidoMaterno+"\n"+
+            "Fecha de nacimiento: "+fechaNacimiento+"\n"
+        );
+    }
 }
