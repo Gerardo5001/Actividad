@@ -1,9 +1,10 @@
 public class ProgramaPrincipal {
     public static void main(String[] args) {
-        BaseDatos b = new BaseDatos();
-        Cache c = new Cache();
-        c.iniciarCache();
+        EmpleadoService b = new EmpleadoService();
+        
         b.llenarDB();
-        c.buscar("Pedro");
+        b.buscar("María");
+        b.buscar("Mauricio");
+        b.buscar("Mauricio");
     }
 }

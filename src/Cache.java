@@ -4,23 +4,23 @@ import java.util.Date;
 import java.util.List;
 
 public class Cache {
-    List<Usuario> usuarios = new ArrayList<Usuario>();
+    List<Empleado> empleados = new ArrayList<Empleado>();
     public void iniciarCache(){
-        usuarios.add(new Usuario("Pedro", "Lopez", "Perez",new Date(1999,1,19)));
+        empleados.add(new Empleado("María", "González", "Reyes",new Date(1999,1,19),"El Jardín",15,"Derecha","Villahermosa","Tabasco","mariagr@hotmail.com"));
     }
-    public void nuevoRegistro(Usuario usuario){
-        usuarios.add(usuario);
+    public void nuevoRegistro(Empleado usuario){
+        empleados.add(usuario);
     }
-    public void buscar(String nombre){
-        for (int i = 0; i < usuarios.size(); i++) {
-            usuarios.get(i).getNombre();
-            if (usuarios.get(i).getNombre() == nombre) {
-                usuarios.get(i).mostrar();
-                return;
+    public boolean buscar(String nombre){
+        for (int i = 0; i < empleados.size(); i++) {
+            empleados.get(i).getNombre();
+            if (empleados.get(i).getNombre() == nombre) {
+            	System.out.println("Consultado desde el caché");
+                empleados.get(i).mostrar();
+                return true;
             }
         }
-        BaseDatos b = new BaseDatos();
-        b.buscar(nombre);
+        return false;
     }
 
 }
